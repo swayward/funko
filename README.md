@@ -10,6 +10,6 @@ You will also need to update the passwords in
 * funko/db_page_conn.php
 to match the passwords in the the mysql database scripts
 
-There are two scripts
+There are two mysql scripts
 * create_users.sql
 * create_table.sql
