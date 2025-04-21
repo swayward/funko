@@ -1,0 +1,148 @@
+                <div class="row">
+                <!-- BEGIN row -->
+
+                    <div class="col-12 mt-2">
+                    <!-- BEGIN Column -->
+
+                        <div class="card border border-primary rounded">
+					    <!-- BEGIN Panel -->
+
+						    <div class="card-header bg-primary text-white">
+                            <!-- BEGIN Header -->
+							    <div class="d-flex justify-content-between">
+								    <div><a href="https://www.jaycroft.com/funko_management/?funko_character_id=<?php echo $funko_character_id; ?>"><?php echo $funko_character_id; ?></a></div>
+								    <div></div>
+							    </div>
+						    </div>
+
+			                <div class="card-body">
+			                <!-- BEGIN Panel Body -->
+
+                                <div class="row">
+                                <!-- BEGIN row -->
+
+                                    <div class="col-12 col-sm-6">
+                                        <!-- Image goes here -->
+                                        <?php echo $funko_image; ?> 
+                                    </div>
+
+                                    <div class="col-12 col-sm-6">
+                                        
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Collection ID:</div>
+                                            <div class="w-auto p-1 text-left"><?php echo $funko_character_id; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">In My Collection:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_owned; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Ordered Date:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_ordered_date; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Funko Number:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_number; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Funko Series:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_series; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Character Name:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_character; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Vaulted?:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_vaulted; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Exclusivity:</div>
+                                            <div class="p-1 text-left"><?php echo $exclusive; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Available:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_available_date; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Tags:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_tags; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">UPC:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_barcode; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Current Value:</div>
+                                            <div class="p-1 text-left">$<?php echo $funko_value; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Value Date:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_value_date; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Value Source:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_value_source; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Purchace Price:</div>
+                                            <div class="p-1 text-left">$<?php echo $funko_price; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Purchased Date:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_purchased_date; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Purchased From:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_seller; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Notes:</div>
+                                            <div class="p-1 text-left"><?php echo $funko_notes; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Create Date:</div>
+                                            <div class="p-1 text-left"><?php echo $insert_date; ?></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bg-light w-50 p-1 pl-2 mr-2">Update Date:</div>
+                                            <div class="p-1 text-left"><?php echo $update_date; ?></div>
+                                        </div>
+
+                                    </div>
+
+                                <!-- CLOSE Row -->
+                                </div>
+
+                            <!-- END Panel Body -->
+			                </div>
+
+                        <!-- CLOSE Panel -->
+                        </div>
+
+                    <!-- CLOSE Column -->
+                    </div>
+
+                <!-- CLOSE Row -->
+                </div>
+
+

@@ -1,0 +1,715 @@
+
+			<div class="border border-primary rounded mt-1 mr-4 mb-1 ml-4"> 
+			<!-- BEGIN FORM SECTION -->
+			
+				<form action="index.php" method="post" enctype="multipart/form-data">
+
+					<div class="mb-1 p-1 <?php echo $results_color; ?>">
+						<div class=""><?php echo $results; ?></div>
+					</div>
+							
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Funko Character ID:</span>
+						</div>
+						<input readonly class="form-control" type="text" name="funko_character_id" value="<?php echo $funko_character_id; ?>" />
+						<div class="input-group-append">
+							<input class="form-control-sm" type="text" name="search_funko_character_id" value="" />
+							<button type="submit" class="btn btn-success btn-sm" name="btn_search">Search</button>
+						</div>
+					</div>
+							
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Funko Number:</span>
+						</div>
+						<input class="form-control" type="text" name="funko_number" value="<?php echo $funko_number; ?>"
+							placeholder="" data-toggle="tooltip" title="Numeric Value" />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_number_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+					
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Owned:</span>
+						</div>
+
+					    <input class="form-input" type="checkbox" name="funko_owned" style="float:right; padding-left:10px;" value="true" <?php if($funko_owned === '1') {echo 'checked';} ?> />
+
+						<div class="input-group-append">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_owned_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Funko Series:</span>
+						</div>
+						<input class="form-control" type="text" name="funko_series" value="<?php echo $funko_series; ?>"
+							placeholder="" data-toggle="tooltip" title="Series Title" />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_series_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Character Name:</span>
+						</div>
+						<input class="form-control" type="text" name="funko_character" value="<?php echo $funko_character; ?>"
+							placeholder="" data-toggle="tooltip" title="Name of Character" />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_character_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Funko Status:</span>
+						</div>
+						<select class="form-control" name="funko_status" placeholder="" data-toggle="tooltip" title="Is it Vaulted.">
+							<option></option>
+							<option value="vaulted" <?php if($funko_status === "1"){ echo 'selected="selected"'; }?> >Vaulted</option>
+						</select>
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_status_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Exclusivity:</span>
+						</div>
+						<textarea class="form-control" rows="3" name="exclusive" 
+							placeholder="" data-toggle="tooltip" 
+							title="Exclusivity of this Funko."><?php echo $exclusive; ?></textarea>
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#exclusive_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Notes:</span>
+						</div>
+						<textarea class="form-control" rows="3" name="funko_notes" 
+							placeholder="" data-toggle="tooltip" 
+							title="Notes about this Funko."><?php echo $funko_notes; ?></textarea>
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_notes_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Available Date:</span>
+						</div>
+						<input class="form-control" type="text" name="funko_available_date" value="<?php echo $funko_available_date; ?>"
+							placeholder="" data-toggle="tooltip" title="When will this Funko will be available. Example: 2018-10(October)" />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_available_date_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Tags:</span>
+						</div>
+						<input class="form-control" type="text" name="funko_tags" value="<?php echo $funko_tags; ?>"
+							placeholder="" data-toggle="tooltip" title="Tags about this Funko." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_tags_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Quantity Owned:</span>
+						</div>
+						<input class="form-control" type="number" name="funko_quantity" value="<?php echo $funko_quantity; ?>"
+							placeholder="" data-toggle="tooltip" title="How many copies owned." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_quantity_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Value</span>
+							<span class="input-group-text">$</span>
+						</div>
+						<input class="form-control" type="number" step="0.01" name="funko_value" value="<?php echo $funko_value; ?>"
+							placeholder="" data-toggle="tooltip" title="What is the Funko Currently Worth." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_value_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Value Date:</span>
+						</div>
+						<input class="form-control" type="date" name="funko_value_date" value="<?php echo $funko_value_date; ?>"
+							placeholder="" data-toggle="tooltip" title="Date item was valued." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_value_date_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+			    	<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Value Source:</span>
+						</div>
+						<input class="form-control" type="text" name="funko_value_source" value="<?php echo $funko_value_source; ?>"
+							placeholder="" data-toggle="tooltip" title="Where was this Funko purchased." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_value_source_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Purchace Price:</span>
+							<span class="input-group-text">$</span>
+						</div>
+						<input class="form-control" type="number" step="0.01" name="funko_price" value="<?php echo $funko_price; ?>"
+							placeholder="" data-toggle="tooltip" title="How many copies owned." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_price_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Purchased Date:</span>
+						</div>
+						<input class="form-control" type="date" name="funko_purchased_date" value="<?php echo $funko_purchased_date; ?>"
+							placeholder="" data-toggle="tooltip" title="Date item was purchased." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_purchased_date_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Purchased From:</span>
+						</div>
+						<input class="form-control" type="text" name="funko_seller" value="<?php echo $funko_seller; ?>"
+							placeholder="" data-toggle="tooltip" title="Where was this Funko purchased." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_seller_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Ordered Date:</span>
+						</div>
+						<input class="form-control" type="date" name="funko_ordered_date" value="<?php echo $funko_ordered_date; ?>"
+							placeholder="" data-toggle="tooltip" title="Date item was ordered." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_ordered_date_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Barcode:</span>
+						</div>
+						<input class="form-control" type="number" name="funko_barcode" value="<?php echo $funko_barcode; ?>"
+							placeholder="" data-toggle="tooltip" title="Barcode for this Funko item." />
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_barcode_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+		
+    				<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Image:</span>
+						</div>
+                        <input class="form-control" type="text" name="funko_image" value="<?php echo $funko_image; ?>" >
+						<div class="input-group-append border-left">
+							<button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_image_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Upload New Image:</span>
+						</div>
+						<input class="form-control" type="file" name="fileToUpload" id="fileToUpload">
+						<button type="submit" class="btn btn-success btn-sm" name="btn_upload">Upload</button>
+						<div class="input-group-append border-left">
+                            <button type="button" class="btn btn-outline-light btn-sm text-dark" data-toggle="modal" data-target="#funko_image_info">
+                                <img src="images/question_mark_100x100.png" style="width:20px;">
+                            </button>
+						</div>
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Insert Date:</span>
+						</div>
+						<input readonly class="form-control" type="text" name="insert_date" value="<?php echo $insert_date ?>" />
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Insert By:</span>
+						</div>
+						<input readonly class="form-control" type="text" name="insert_by" value="<?php echo $insert_by ?>" />
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Update Date:</span>
+						</div>
+						<input readonly class="form-control" type="text" name="update_date" value="<?php echo $update_date ?>" />
+					</div>
+
+					<div class="input-group mb-1 input-group-sm">
+						<div class="input-group-prepend w-25">
+							<span class="input-group-text w-100">Update By:</span>
+						</div>
+						<input readonly class="form-control" type="text" name="update_by" value="<?php echo $update_by ?>" />
+					</div>
+
+					
+					<div class="d-flex">
+						<button type="submit" class="btn btn-success flex-fill" name="btn_save">Save</button>
+						<button type="submit" class="btn btn-outline-secondary flex-fill" name="btn_clear">Clear</button>
+						<button type="submit" class="btn btn-danger flex-fill" name="btn_delete" id="warn_button" onclick="return warn_delete()">Delete</button>
+										<script type="text/javascript">
+											function warn_delete() {
+												if(confirm("Are you sure you want to DELETE this record. All data will be lost!") == true) {
+													return true;
+												}
+												else {
+													//alert("false");
+													return false;
+												}
+											};
+										</script>
+					</div>
+				
+				</form>
+			 
+			<!-- END FORM SECTION -->
+			</div>
+			
+<!-- BEGIN MODAL AREA - WILL NOT BE VISIBLE ON PAGE (UNLESS JAVASCRIPT IS TURNED OFF) -->
+
+			<div id="funko_number_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Funko Number</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_owned_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Owned</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_series_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Funko Series</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_character_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Character</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_status_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Funko Status</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="exclusive_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Exclusivity</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>Text Field. Indicate the exclusivity of the Funko.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_notes_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Notes</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_available_date_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Availability Date</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_tags_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Tags</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_quantity_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Quantity Owned</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+
+			<div id="funko_value_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Current Value</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>What is the current value of the funko.</p>
+                            <p>https://www.hobbydb.com</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+            </div>
+			
+			<div id="funko_price_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Purchase Price</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_purchased_date_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Purchased Date</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_seller_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Purchased From</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_barcode_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Funko Barcode</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_image_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Image</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+			<div id="funko_ordered_date_info" class="modal" role="dialog">
+			<!-- BEGIN model -->
+				<div class="modal-dialog">
+				
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">Ordered Date</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<p>information here</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				
+				</div>
+			<!-- END model -->
+			</div>
+			
+<!-- END MODAL AREA -->
+

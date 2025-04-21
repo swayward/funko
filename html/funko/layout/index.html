@@ -1,0 +1,47 @@
+
+			<div class="border border-primary rounded m-2">
+			    <form action="index.php" method="post">
+				    <div class="form-inline col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-2">
+					    <input type="search" class="form-control" name="search" id="search" value="<?php echo $search_value; ?>">
+					    <input type="submit" class="btn btn-success" name="submit" value="Search" />
+                        <p><?php echo $search_results; ?></p>
+				    </div>
+			    </form>
+			</div>
+
+			<div class="row">
+			<!-- BEGIN row 2 -->
+
+			    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2">
+				<!-- BEGIN Column -->
+					<div class="card border border-primary rounded">
+					<!-- BEGIN Panel -->
+						<div class="card-header bg-primary text-white">
+							<div class="d-flex justify-content-between">
+								<div><a href="https://www.jaycroft.com/">Stats</a></div>
+								<div></div>
+							</div>
+						</div>
+						
+						<div class="card-body" style="min-height:440px; max-height:440px" >
+						<!-- BEGIN Panel Body -->
+                            <!-- Details go here -->
+                            <h4>Stats:</h4>
+                            <ul class="list-group">
+                                 <li class="list-group-item">Keychains Listed: <?php echo $availableCount; ?></li>
+                                 <li class="list-group-item">Keychains Owned: <?php echo $ownedCount; ?> (<?php echo $percentage; ?>&#37;)</li>
+                                 <li class="list-group-item">Keychains Wanted: <?php echo $wantedCount; ?></li>
+                                 <li class="list-group-item">Collection Value: $<?php echo $value; ?></li>
+                                 <li class="list-group-item">Collection Cost: $<?php echo $spent; ?></li>
+                                 <li class="list-group-item">Average Cost: $<?php echo $average; ?></li>
+                            </ul>
+	                    <!-- END Panel Body -->
+						</div>
+					<!-- END Panel -->
+					</div>
+				<!-- END Column -->
+				</div>
+
+				<?php echo $content; ?>
+			<!-- END row 2 -->
+			</div>

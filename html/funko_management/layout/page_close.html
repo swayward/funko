@@ -1,0 +1,27 @@
+<?php
+if(!empty($closing_scripts)) {
+	$closing_scripts = $closing_scripts;
+}
+else {
+	$closing_scripts = '';
+}
+?>
+			<?php include 'layout/footer_menu.html'; ?>
+
+		<!-- END conatainer -->
+		</div>
+		
+		<?php echo $closing_scripts; ?>
+
+<?php
+/*************************
+this will get the debug.html page and append it to the end
+if debug = TRUE and file exists
+*************************/
+if($edit_funko->is_debug() && $edit_funko->debug_file_exist()) {
+	include 'debug.html';
+}
+?>
+
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<?php
+/*
+* Additional headers for individual pages go here
+*/
+
+if(!empty($add_headers)) {
+	$add_headers = $add_headers;
+}
+else {
+	$add_headers = '';
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<title>Pocket Pop! Keychain</title>
+		
+		 <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="author" content="Jay Croft" />
+		<meta name="author" content="" />
+		<link rel="icon" type="image/png" href="favicon.png">
+		
+		<?php echo $add_headers; ?>
+		
+		<style type="text/css">
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="container-fluid">
+		<!-- BEGIN conatainer -->
+		
+			<?php include 'layout/menu.html'; ?>
+
+			
