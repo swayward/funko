@@ -13,3 +13,5 @@ to match the passwords in the the mysql database scripts
 There are two mysql scripts
 * create_users.sql
 * create_table.sql
+
+You will also need to create a .htaccess file in funko_management. It is a simply way of doing a login challange to keep others away from the management page.
